@@ -1,0 +1,20 @@
+[Unit]
+Description=My Program
+After=network.target
+After=myother.service
+
+[Service]
+User=myuser
+Group=mygroup
+Environment=/path/to/runtime
+WorkingDirectory=/path/to/your/service
+ExecStart=/path/to/your/service/service.dll
+StandardOutput=tty
+StandardError=tty
+ExecStartPre=/bin/sleep 30
+Restart=always
+RestartSec=10
+SyslogIdentifier=myservice
+
+[Install]
+WantedBy=multi-user.target
