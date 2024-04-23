@@ -1,3 +1,13 @@
+## Common systemd service locations
+- /etc/systemd/system/
+- /run/systemd/system/
+- /lib/systemd/system/
+
+### Locate Path of a specific service
+```console
+sudo systemctl show serviceName.service | grep Path
+```
+
 **Restart=** directive in systemd unit files.
   - **Restart=no**: The service will not be restarted automatically.
   - **Restart=on-success**: Restart only if the service process exits with a success code.
